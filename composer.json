@@ -1,6 +1,6 @@
 {
     "name": "nu1ww/mife",
-    "description": "dev",
+    "description": "Dialog MIFE Package",
     "require": {
         "php": ">=5.6",
         "guzzlehttp/psr7": "1.6.1"
@@ -12,7 +12,7 @@
             "email": "nuwan.wijethilaka@layoutindex.com"
         }
     ],
-    "minimum-stability": "dev-master",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "autoload": {
         "psr-4": {

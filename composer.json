@@ -3,7 +3,7 @@
     "description": "dev",
     "require": {
         "php": ">=5.6",
-        "guzzlehttp/psr7": "*"
+        "guzzlehttp/psr7": "1.6.1"
     },
     "license": "MIT",
     "authors": [
@@ -12,7 +12,7 @@
             "email": "nuwan.wijethilaka@layoutindex.com"
         }
     ],
-    "minimum-stability": "master",
+    "minimum-stability": "dev-master",
     "prefer-stable": true,
     "autoload": {
         "psr-4": {

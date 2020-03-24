@@ -11,7 +11,7 @@
             "email": "nuwan.wijethilaka@layoutindex.com"
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "master",
     "autoload": {
         "psr-4": {
             "Mife\\": "src/"

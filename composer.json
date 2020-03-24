@@ -12,7 +12,7 @@
             "email": "nuwan.wijethilaka@layoutindex.com"
         }
     ],
-    "minimum-stability": "dev-master",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "autoload": {
         "psr-4": {

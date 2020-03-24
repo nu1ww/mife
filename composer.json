@@ -1,0 +1,20 @@
+{
+    "name": "nu1ww/mife",
+    "description": "dev",
+    "require": {
+        "guzzlehttp/psr7": "*"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nuwan Wijethilaka",
+            "email": "nuwan.wijethilaka@layoutindex.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Mife\\": "src/"
+        }
+    }
+}

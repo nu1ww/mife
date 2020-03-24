@@ -25,7 +25,7 @@ MIFE_BASE_64_AUTH=xxxxVHVFd2NGNm9Qc2ZCemR2UUhBYTpmR3VqT3BN*********************
 MIFE_APP_ID=xxx
 MIFE_APP_PASSWORD=xxxxx
 MIFE_LOG=true // You can disable the logs using true and false
-MIFE_ACCESS_TOKEN_STORE=DB // You can select the either "DB" or "FILE"
+MIFE_ACCESS_TOKEN_STORE=DB // You can select the either "DB" or "FILE" to store the access_token
 ```
 
 => If you need keep record API request response logs in database set the below values in database and run MySql queries.

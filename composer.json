@@ -1,20 +1,21 @@
 {
-    "name": "nu1ww/mife",
-    "description": "Dialog MIFE Package",
-    "require": {
-        "php": ">=5.6",
-        "guzzlehttp/psr7": "1.6.1"
-    },
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Nuwan Wijethilaka",
-            "email": "nuwan.wijethilaka@layoutindex.com"
-        }
-    ],
-    "autoload": {
-        "psr-4": {
-            "Mife\\": "src/"
-        }
+  "name": "nu1ww/mife",
+  "description": "DialogMIFEPackage",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Nuwan Wijethilaka",
+      "email": "nuwan.wijethilaka@layoutindex.com"
     }
+  ],
+  "require": {
+    "php": ">=5.6",
+    "guzzlehttp/psr7": "1.6.1"
+  },
+  "minimum-stability": "dev",
+  "autoload": {
+    "psr-4": {
+      "Mife\\": "src/"
+    }
+  }
 }

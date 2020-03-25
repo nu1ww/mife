@@ -85,7 +85,7 @@ $invoiceNumber=3522;
 $reasonCode=2071;
 $amount=1;
 $bill = new  \Mife\DialogAddToBill\DialogAddToBill();
-$data = $d->chargeToBill($mobileNumber, $invoiceNumber,$reasonCode, $amount); 
+$data = $bill->chargeToBill($mobileNumber, $invoiceNumber,$reasonCode, $amount); 
 ```
 
 It has following functions:

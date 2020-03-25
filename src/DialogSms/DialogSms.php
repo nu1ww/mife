@@ -19,8 +19,8 @@ class DialogSms
 
     public function __construct()
     {
-        $this->appId = env('MIFE_APP_ID');
-        $this->appPassword = env('MIFE_APP_PASSWORD');
+        $this->appId = getenv('MIFE_APP_ID');
+        $this->appPassword = getenv('MIFE_APP_PASSWORD');
         $this->accessToken = MIFE::getAccessToken();
         $this->senderAddress = '444';
         $this->helper = new ConfigHelper();

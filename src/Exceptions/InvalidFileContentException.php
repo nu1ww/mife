@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Dasun Dissanayake
- * Date: 2018-10-28
- * Time: 1:48 AM.
- */
-
 namespace Mife\Exceptions;
 
 use Exception;

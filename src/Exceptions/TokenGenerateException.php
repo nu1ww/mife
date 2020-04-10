@@ -9,7 +9,7 @@ use Throwable;
 /**
  * Class TokenGenerateException.
  */
-class TokenGenerateException extends Exception implements LaravelIDEABIZException
+class TokenGenerateException extends Exception
 {
     /**
      * @param string         $message

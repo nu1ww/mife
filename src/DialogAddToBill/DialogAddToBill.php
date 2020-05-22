@@ -130,7 +130,10 @@ class DialogAddToBill
 
     public function chargeToBill($mobileNumber, $invoiceNumber, $reasonCode, $amount, $taxable = false)
     {
+
+
         $endPoint = "https://extmife.dialog.lk/extapi/api_crm_0000120181025/accounts/$mobileNumber/charge";
+
 
         $method = "POST";
         $headers = [
@@ -142,7 +145,7 @@ class DialogAddToBill
         $getSessionKey = $this->getSessionKey();
 
         if (!$getSessionKey->status) {
-           // dd('fail');
+            // dd('fail');
         }
 
 
@@ -182,5 +185,71 @@ class DialogAddToBill
         ];
     }
 
+    /**
+     * @param $mobileNumber
+     * @param $invoiceNumber
+     * @param $reasonCode
+     * @param $amount
+     * @param bool $taxable
+     * @param string $billDesc
+     * @return object
+     * @throws \Mife\Exceptions\InvalidFileContentException
+     * @throws \Mife\Exceptions\InvalidResponseException
+     * @throws \Mife\Exceptions\TokenGenerateException
+     */
+    public function chargeBySpecialDebit($mobileNumber, $invoiceNumber, $reasonCode, $amount, $taxable = false, $billDesc = "")
+    {
 
+        $endPoint = "https://extmife.dialog.lk/extapi/api_crm_0000120181025/accounts/$mobileNumber/payments/specificdebit";
+
+        $method = "POST";
+        $headers = [
+            "Content-Type" => "application/json",
+            "Authorization" => "Bearer " . $this->accessToken,
+            "Accept" => "application/json",
+        ];
+
+        $getSessionKey = $this->getSessionKey();
+
+        if (!$getSessionKey->status) {
+            // dd('fail');
+        }
+
+
+        $request_body = [
+            "chargeBySpecialDebit" => [
+                "ChargeBySpecialDebitRequest_1" => [
+                    'appID' => $this->appId,
+                    'authKey' => $getSessionKey->data->getSessionKeyResponse->result,
+                    'domainID' => 'GSM',
+                    'transactionID' => $invoiceNumber,
+                    "amount" => $amount,
+                    "billDesc" => $billDesc,
+                    "reasonCode" => $reasonCode,
+                    "taxable" => $taxable
+                ]]
+        ];
+
+        // Rest API request and response get to a variable
+        $response = MIFE::apiCall($endPoint, $method, $headers, $request_body, 'json');
+
+
+        // Get response body
+        // return $response;
+        // Get status code validate
+        if ($response->getStatusCode() == 200) {
+
+            // if chargeToBillResponse->transResult = 0 Its success transaction
+
+            return (object)[
+                "status" => true,
+                "data" => json_decode($response->getBody())
+            ];
+        }
+
+        return (object)[
+            "status" => false,
+            "data" => []
+        ];
+    }
 }

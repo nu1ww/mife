@@ -121,15 +121,14 @@ class DialogAddToBill
      * @param $invoiceNumber
      * @param $reasonCode
      * @param $amount
+     * @param bool $taxable
      * @return object
-     * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \Mife\Exceptions\InvalidFileContentException
      * @throws \Mife\Exceptions\InvalidResponseException
      * @throws \Mife\Exceptions\TokenGenerateException
-     *
      */
 
-    public function chargeToBill($mobileNumber, $invoiceNumber, $reasonCode, $amount)
+    public function chargeToBill($mobileNumber, $invoiceNumber, $reasonCode, $amount, $taxable = false)
     {
         $endPoint = "https://extmife.dialog.lk/extapi/api_crm_0000120181025/accounts/$mobileNumber/charge";
 
@@ -143,7 +142,7 @@ class DialogAddToBill
         $getSessionKey = $this->getSessionKey();
 
         if (!$getSessionKey->status) {
-            dd('fail');
+           // dd('fail');
         }
 
 
@@ -156,13 +155,12 @@ class DialogAddToBill
                     'transactionID' => $invoiceNumber,
                     "amount" => $amount,
                     "reasonCode" => $reasonCode,
-                    "taxable" => true
+                    "taxable" => $taxable
                 ]]
         ];
 
         // Rest API request and response get to a variable
         $response = MIFE::apiCall($endPoint, $method, $headers, $request_body, 'json');
-
 
 
         // Get response body
